@@ -14,6 +14,7 @@ import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.impute import SimpleImputer
+from sklearn.tree import DecisionTreeClassifier
 
 def load_data():
     """Load the Titanic dataset from the web."""
