@@ -1,28 +1,41 @@
-<div style="font-size:2.5em; font-weight:bold; text-align:center; margin-top:20px;">Source Code</div>
+<div style="font-size:1.8em; font-weight:bold; text-align:center; margin-top:20px;">Decision Tree Classification Source Code</div>
 
-This directory contains the main source code for the project, including data processing, model implementation, and utility functions.
+# 1. File Description
+This directory contains Python source code for decision tree classification examples.
 
-# 1. Contents
-- `data/`: Data processing and preprocessing modules
-- `models/`: Model implementation and training code
-- `utils/`: Utility functions and helper modules
-- `config.py`: Configuration settings and parameters
+## 1.1 Files
+- `simple_iris_classifier.py`: A beginner-friendly script for classifying iris flowers using a decision tree.
+- `simple_titanic_classifier.py`: A script for predicting Titanic passenger survival using a decision tree.
 
-# 1.1 Module Descriptions
-## 1.1.1 Data Processing
-- Data loading and preprocessing functions
-- Feature engineering utilities
-- Data validation and cleaning
+# 2. How to Run
+Run the scripts from the project root directory:
 
-## 1.1.2 Model Implementation
-- Decision tree classifier implementation
-- Model training and evaluation functions
-- Hyperparameter tuning utilities
+For the Iris example (recommended for beginners):
+```bash
+python src/simple_iris_classifier.py
+```
 
-## 1.1.3 Utilities
-- Logging and monitoring
-- File I/O operations
-- Common helper functions
+For the Titanic example:
+```bash
+python src/simple_titanic_classifier.py
+```
 
-# 1.2 Usage
-The source code is organized in a modular fashion, allowing for easy import and reuse of components. Each module is documented with docstrings and follows Python best practices. 
+# 3. What the Scripts Do
+
+## 3.1 Iris Classifier
+1. Loads the built-in Iris dataset from scikit-learn
+2. Shows information about the features and target classes
+3. Identifies the most important features for classification
+4. Trains a decision tree model to classify iris flowers
+5. Evaluates the model's accuracy
+6. Creates visualizations of the decision tree and feature importance
+7. Makes a prediction for an example iris flower
+
+## 3.2 Titanic Classifier
+1. Loads the Titanic dataset from an online source
+2. Cleans and prepares the data
+3. Identifies the most important features for predicting survival
+4. Trains a decision tree model using those features
+5. Evaluates the model's accuracy
+6. Creates visualizations of the decision tree and feature importance
+7. Makes a prediction for an example passenger 

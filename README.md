@@ -1,91 +1,66 @@
-<div style="font-size:2.5em; font-weight:bold; text-align:center; margin-top:20px;">Titanic Dataset Classification with Decision Tree</div>
+<div style="font-size:2.5em; font-weight:bold; text-align:center; margin-top:20px;">Simple Decision Tree Classification</div>
 
-# 1. Project Overview
-This project implements a machine learning solution for predicting survival on the Titanic using a Decision Tree classifier. The project includes comprehensive data analysis, preprocessing, and model evaluation. The goal is to predict whether a passenger survived the Titanic disaster based on various features.
+# 1. Introduction
+This project provides beginner-friendly implementations of Decision Tree Classifiers using two different datasets:
 
-# 2. Dataset Description
-The Titanic dataset contains information about 891 passengers who were on board the Titanic. The dataset includes both demographic and travel-related information.
+1. **Iris Dataset** (Recommended for beginners): A simple dataset with 150 samples of iris flowers, with 4 features and 3 classes.
+2. **Titanic Dataset**: A more complex dataset about Titanic passengers with multiple features.
 
-## 2.1 Dataset Features
-| Feature | Description | Type | Notes |
-|---------|-------------|------|-------|
-| PassengerId | Unique identifier for each passenger | Integer | Dropped during preprocessing |
-| Survived | Survival status (0 = No, 1 = Yes) | Binary | Target variable |
-| Pclass | Ticket class (1 = 1st, 2 = 2nd, 3 = 3rd) | Integer | Socio-economic status |
-| Name | Passenger name | String | Used to extract titles |
-| Sex | Gender | Categorical | Converted to binary |
-| Age | Age in years | Float | Missing values filled with median |
-| SibSp | Number of siblings/spouses aboard | Integer | Used to create family features |
-| Parch | Number of parents/children aboard | Integer | Used to create family features |
-| Ticket | Ticket number | String | Dropped during preprocessing |
-| Fare | Passenger fare | Float | Scaled during preprocessing |
-| Cabin | Cabin number | String | Dropped due to many missing values |
-| Embarked | Port of embarkation (C = Cherbourg, Q = Queenstown, S = Southampton) | Categorical | Converted to numerical |
+Both examples are designed to be easy to understand and focus on the fundamental concepts of machine learning.
 
-## 2.2 Derived Features
-| Feature | Description | Type | Creation Method |
-|---------|-------------|------|----------------|
-| FamilySize | Total family members aboard | Integer | SibSp + Parch + 1 |
-| IsAlone | Whether passenger is traveling alone | Binary | 1 if FamilySize = 1, else 0 |
-| Title | Passenger's title (Mr, Mrs, Miss, etc.) | Categorical | Extracted from Name |
+# 2. Project Structure
+- `src/simple_iris_classifier.py`: Simple decision tree for classifying iris flowers
+- `src/simple_titanic_classifier.py`: Decision tree for predicting Titanic survival
+- `iris_decision_tree.png`: Visual representation of the iris decision tree
+- `iris_feature_importance.png`: Bar chart showing importance of iris features
+- `titanic_decision_tree.png`: Visual representation of the Titanic decision tree
+- `feature_importance.png`: Bar chart showing importance of Titanic features
+- `requirements.txt`: List of required Python packages
 
-# 3. Project Structure
-- `src/`: Contains all Python source files
-  - `titanic_analysis.py`: Main data preprocessing and analysis script
-  - `titanic_eda.py`: Exploratory data analysis script
-  - `ddd.py`: Decision tree implementation and evaluation
-- `notebooks/`: Jupyter notebooks for interactive analysis
-- `data/`: Directory for storing datasets
-- `results/`: Contains output visualizations and model results
-- `requirements.txt`: Project dependencies
-- `environment.yml`: Conda environment configuration
+# 3. Iris Dataset Example
+The Iris example uses the famous Iris flower dataset which contains:
+- 4 features: sepal length, sepal width, petal length, petal width
+- 3 classes: setosa, versicolor, virginica
 
-# 4. Data Preprocessing Steps
-1. Handle missing values:
-   - Age: Filled with median
-   - Embarked: Filled with mode
-   - Cabin: Dropped due to high missing values
-2. Feature engineering:
-   - Created FamilySize and IsAlone features
-   - Extracted Title from Name
-3. Data transformation:
-   - Converted categorical variables to numerical
-   - Scaled numerical features
-   - Dropped unnecessary columns
+This is an excellent starter dataset because:
+- It's small (only 150 samples)
+- It has few features (only 4)
+- The features are easy to understand (flower measurements)
+- It's built into scikit-learn (no need to download)
 
-# 5. Installation
-1. Clone the repository
-2. Create a virtual environment:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+# 4. How to Run
+## 4.1. Prerequisites
+Make sure you have Python installed along with the required libraries:
+```bash
+pip install -r requirements.txt
+```
 
-# 6. Usage
-1. Run the data preprocessing and analysis:
-   ```bash
-   python src/titanic_analysis.py
-   ```
-2. For interactive analysis, open the Jupyter notebooks in the `notebooks/` directory
+## 4.2. Running the Scripts
+For the Iris example (recommended for beginners):
+```bash
+python src/simple_iris_classifier.py
+```
 
-# 7. Results
-The project generates several visualizations:
-- `decision_tree.png`: Visualization of the trained decision tree
-- `confusion_matrix.png`: Model performance metrics
-- `titanic_eda_plots.png`: Exploratory data analysis visualizations
+For the Titanic example:
+```bash
+python src/simple_titanic_classifier.py
+```
 
-# 8. Dependencies
-- Python 3.8+
-- numpy
-- pandas
-- matplotlib
-- seaborn
-- scikit-learn
-- jupyter
+# 5. What the Code Does
+Both scripts follow similar steps:
+1. Load the dataset
+2. Prepare and clean the data
+3. Analyze and identify the most important features
+4. Split data into training and testing sets
+5. Create and train a decision tree
+6. Evaluate the model's performance
+7. Visualize the decision tree and feature importance
+8. Make a prediction for an example
 
-# 9. License
-This project is licensed under the MIT License - see the LICENSE file for details.
+# 6. Learning Points
+- How to load and prepare data for machine learning
+- How to identify important features in a dataset
+- How to create and train a decision tree
+- How to evaluate a machine learning model
+- How to visualize a decision tree and feature importance
+- How to use the model for making predictions
