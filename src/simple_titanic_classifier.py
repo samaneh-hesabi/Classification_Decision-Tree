@@ -26,7 +26,6 @@ data['Embarked'] = data['Embarked'].map({'S': 0, 'C': 1, 'Q': 2})
 # Remove columns we don't need
 data = data.drop(['Name', 'Ticket', 'Cabin', 'PassengerId'], axis=1)
 
-print("\nData after cleaning:")
 print(data.head())
 
 # Step 3: Split data into features (X) and target (y)
@@ -65,8 +64,8 @@ X_simple = X[top_features]
 
 # Step 7: Split into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X_simple, y, test_size=0.2, random_state=42)
-print(f"\nTraining set size: {len(X_train)}")
-print(f"Testing set size: {len(X_test)}")
+#print(f"\nTraining set size: {len(X_train)}")
+#print(f"Testing set size: {len(X_test)}")
 
 # Step 8: Train the final decision tree model
 print("\nStep 8: Training the final model...")
